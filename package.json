@@ -18,7 +18,14 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "flowbite": "^2.5.2",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.14.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
   },
@@ -33,6 +40,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "tailwindcss": "^3.4.14",
     "typescript": "~5.5.2"
   }
 }
