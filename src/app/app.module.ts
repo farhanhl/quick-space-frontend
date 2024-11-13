@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReservationComponent } from './pages/reservation/reservation.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/admin/login/login.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { RoomComponent } from './pages/admin/room/room.component';
 
 @NgModule({
-  declarations: [AppComponent, ReservationComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  declarations: [AppComponent, LoginComponent, DashboardComponent, RoomComponent],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, ReactiveFormsModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

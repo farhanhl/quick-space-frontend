@@ -7,6 +7,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoadingComponent } from './loading/loading.component';
 import { ReservationCardComponent } from './reservation-card/reservation-card.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ReservationCardComponent } from './reservation-card/reservation-card.co
     FooterComponent,
     LoadingComponent,
     ReservationCardComponent,
+    TableComponent,
   ],
   imports: [CommonModule, RouterModule, FontAwesomeModule],
   exports: [
@@ -23,6 +25,8 @@ import { ReservationCardComponent } from './reservation-card/reservation-card.co
     FooterComponent,
     LoadingComponent,
     ReservationCardComponent,
+    FontAwesomeModule,
+    TableComponent,
   ],
 })
 export class SharedModule {}

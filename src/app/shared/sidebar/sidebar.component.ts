@@ -4,7 +4,11 @@ import {
   faBookmark,
   faMoon,
   faSun,
+  faGauge,
+  faRectangleList,
 } from '@fortawesome/free-solid-svg-icons';
+import { faPersonShelter } from '@fortawesome/free-solid-svg-icons';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,21 +16,29 @@ import {
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-  iconUrl: string = '/icons/quick-space-icon.svg';
-  faHouse = faHouse;
-  faBookmark = faBookmark;
   faSun = faSun;
   faMoon = faMoon;
+  faGauge = faGauge;
+  faHouse = faHouse;
+  faBookmark = faBookmark;
   isDarkMode: boolean = false;
+  isAdminPage: boolean = false;
+  faPersonShelter = faPersonShelter;
+  faRectangleList = faRectangleList;
+  iconUrl: string = '/icons/quick-space-icon.svg';
   @ViewChild('themeToggle') themeToggle!: ElementRef;
   @ViewChild('themeToggleDarkRef') themeToggleDark!: ElementRef;
   @ViewChild('themeToggleLightRef') themeToggleLight!: ElementRef;
 
-  constructor() {
+  constructor(private location: Location) {
     this.isDarkMode =
       localStorage.getItem('color-theme') === 'dark' ||
       (!('color-theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches);
+    this.location.onUrlChange((url) => {
+      this.isAdminPage = location.path().includes('/admin');
+    });
+    console.log(this.isAdminPage + ' - ' + location.path());
   }
 
   handleChangeThemeMode() {

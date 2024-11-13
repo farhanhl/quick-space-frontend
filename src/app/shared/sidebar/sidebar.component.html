@@ -71,30 +71,70 @@
 >
   <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
     <ul class="space-y-2 font-medium">
-      <li
-        routerLinkActive="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        <a
-          routerLink="/"
-          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group"
+      <ng-container *ngIf="isAdminPage; else nonAdminContent">
+        <li
+          routerLinkActive="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg"
+          [routerLinkActiveOptions]="{ exact: true }"
         >
-          <fa-icon [icon]="faHouse" class="w-5 h-5"></fa-icon>
-          <span class="ms-3">Home</span>
-        </a>
-      </li>
-      <li
-        routerLinkActive="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        <a
-          routerLink="/reservation"
-          class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group"
+          <a
+            routerLink="/admin/dashboard"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group"
+          >
+            <fa-icon [icon]="faGauge" class="w-5 h-5"></fa-icon>
+            <span class="ms-3">Dashboard</span>
+          </a>
+        </li>
+        <li
+          routerLinkActive="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg"
+          [routerLinkActiveOptions]="{ exact: true }"
         >
-          <fa-icon [icon]="faBookmark" class="w-5 h-5"></fa-icon>
-          <span class="flex-1 ms-3 whitespace-nowrap">Book a Room</span>
-        </a>
-      </li>
+          <a
+            routerLink="/admin/reservation"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group"
+          >
+            <fa-icon [icon]="faRectangleList" class="w-5 h-5"></fa-icon>
+            <span class="ms-3">Reservation</span>
+          </a>
+        </li>
+        <li
+          routerLinkActive="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a
+            routerLink="/admin/room"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group"
+          >
+            <fa-icon [icon]="faPersonShelter" class="w-5 h-5"></fa-icon>
+            <span class="flex-1 ms-3 whitespace-nowrap">Room</span>
+          </a>
+        </li>
+      </ng-container>
+      <ng-template #nonAdminContent>
+        <li
+          routerLinkActive="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a
+            routerLink="/"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group"
+          >
+            <fa-icon [icon]="faHouse" class="w-5 h-5"></fa-icon>
+            <span class="ms-3">Home</span>
+          </a>
+        </li>
+        <li
+          routerLinkActive="bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a
+            routerLink="/reservation"
+            class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group"
+          >
+            <fa-icon [icon]="faBookmark" class="w-5 h-5"></fa-icon>
+            <span class="flex-1 ms-3 whitespace-nowrap">Book a Room</span>
+          </a>
+        </li>
+      </ng-template>
     </ul>
   </div>
 </aside>

@@ -1,6 +1,6 @@
-<app-sidebar></app-sidebar>
+<app-sidebar *ngIf="isWithSidebarAndFooter"></app-sidebar>
 <section id="loading">
   <app-loading [isLoading]="isLoading"></app-loading>
 </section>
 <router-outlet> </router-outlet>
-<app-footer></app-footer>
+<app-footer *ngIf="isWithSidebarAndFooter"></app-footer>
